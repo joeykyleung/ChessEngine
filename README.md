@@ -1,6 +1,8 @@
 # ChessEngine
 A sophisticated C++ chess engine implementation that provides a robust platform for playing and analyzing chess games.
+
 ![Screenshot 2025-03-12 at 2 36 33 PM](https://github.com/user-attachments/assets/da4684ca-7b93-4cf1-9f45-5bcdae95a7e3)
+
 
 ## Features
 - Complete chess rule implementation including special moves (castling, en passant)
