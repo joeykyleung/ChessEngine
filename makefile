@@ -1,26 +1,31 @@
+CXX = g++
+CXXFLAGS = -Wall -g -std=c++11 -arch $(shell uname -m)
+
 chess: ChessMain.o Pos.o Moves.o ChessBoard.o ChessPiece.o
-	g++ -g ChessMain.o Pos.o Moves.o ChessBoard.o ChessPiece.o -o chess
+	$(CXX) $(CXXFLAGS) ChessMain.o Pos.o Moves.o ChessBoard.o ChessPiece.o -o chess
 
 ChessMain.o: ChessMain.cpp
-	g++ -Wall -g -c ChessMain.cpp
+	$(CXX) $(CXXFLAGS) -c ChessMain.cpp
 
 ChessBoard.o: ChessBoard.cpp ChessBoard.h
-	g++ -Wall -g -c ChessBoard.cpp
+	$(CXX) $(CXXFLAGS) -c ChessBoard.cpp
 
 ChessPiece.o: ChessPiece.cpp ChessPiece.h
-	g++ -Wall -g -c ChessPiece.cpp
+	$(CXX) $(CXXFLAGS) -c ChessPiece.cpp
 
 Moves.o: Moves.cpp Moves.h
-	g++ -Wall -g -c Moves.cpp
+	$(CXX) $(CXXFLAGS) -c Moves.cpp
 
 Pos.o: Pos.cpp Pos.h
-	g++ -Wall -g -c Pos.cpp
+	$(CXX) $(CXXFLAGS) -c Pos.cpp
 
 test: test.o Pos.o Moves.o ChessBoard.o ChessPiece.o
-	g++ -g test.o Pos.o Moves.o ChessBoard.o ChessPiece.o -o test
+	$(CXX) $(CXXFLAGS) test.o Pos.o Moves.o ChessBoard.o ChessPiece.o -o test
 
 test.o: test.cpp
-	g++ -Wall -g -c test.cpp
+	$(CXX) $(CXXFLAGS) -c test.cpp
 
 clean:
 	rm -f *.o chess test
+
+.PHONY: clean

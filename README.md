@@ -8,6 +8,12 @@ A sophisticated C++ chess engine implementation that provides a robust platform 
 - Check, checkmate, and stalemate detection
 - Object-oriented design with clear separation of concerns
 
+## System Requirements
+- C++11 or higher
+- GCC/Clang compiler
+- Make build system
+- Unix-like environment (Linux/macOS)
+
 ## Technical Implementation
 The engine is built with several key components:
 
@@ -37,9 +43,17 @@ The engine is built with several key components:
 1. Clone the repository
 2. Build using make:
 ```bash
-make
+make clean  # Clean any previous builds
+make        # Compile the project
 ```
-3. Run the chess engine:
+
+3. Set executable permissions:
+```bash
+chmod +x chess
+chmod +x test
+```
+
+4. Run the chess engine:
 ```bash
 ./chess
 ```
@@ -58,6 +72,19 @@ cb.submitMove("E7", "E5");  // Move black pawn from E7 to E5
 ## Testing
 The engine includes a comprehensive test suite in `test.cpp`. Run the tests using:
 ```bash
-make test
-./test
+make test    # Compile the test suite
+chmod +x test  # Ensure test is executable
+./test       # Run the tests
 ```
+
+## Troubleshooting
+If you encounter permission denied errors:
+1. Make sure the executables have proper permissions:
+   ```bash
+   chmod +x chess test
+   ```
+2. If compilation fails, ensure you have the required compiler and dependencies:
+   ```bash
+   g++ --version  # Check compiler version
+   make --version # Check make version
+   ```
